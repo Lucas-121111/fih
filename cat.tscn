@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bnlvrue0ftk72"]
+
+[ext_resource type="Texture2D" uid="uid://drd8s8ticwjjl" path="res://fih.png" id="1_hcucf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gkdic"]
+size = Vector2(68, 23)
+
+[node name="cat" type="Area2D" unique_id=554198685 groups=["poster"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1285091545 groups=["poster"]]
+position = Vector2(-120, -52)
+scale = Vector2(0.06682579, 0.06682579)
+texture = ExtResource("1_hcucf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=900890613 groups=["poster"]]
+position = Vector2(-119, -52.5)
+shape = SubResource("RectangleShape2D_gkdic")
+debug_color = Color(0, 0.6, 0.7019608, 0.41960785)

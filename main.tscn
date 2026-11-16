@@ -1,0 +1,206 @@
+[gd_scene format=3 uid="uid://cqow47bch5ocs"]
+
+[ext_resource type="Script" uid="uid://80kl10p8d3vr" path="res://player.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://c7rtrofcgagup" path="res://Screenshot 2026-11-15 at 2.00.09 PM.png" id="1_7mycd"]
+[ext_resource type="Texture2D" uid="uid://df7wbi2v7xpei" path="res://shork.png" id="3_7mycd"]
+[ext_resource type="PackedScene" uid="uid://bnlvrue0ftk72" path="res://cat.tscn" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://blp8t0h4gehw8" path="res://untitled@4x.png" id="4_dg77c"]
+[ext_resource type="Texture2D" uid="uid://fhaw4oqte7vb" path="res://osprey.png" id="5_7mycd"]
+[ext_resource type="Texture2D" uid="uid://drd8s8ticwjjl" path="res://fih.png" id="5_272bh"]
+[ext_resource type="Texture2D" uid="uid://bb68p1a6g3i5o" path="res://untitled@4x (1).png" id="5_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://crjqqrdakvijr" path="res://untitled@4x (2).png" id="6_w48qg"]
+[ext_resource type="Texture2D" uid="uid://db05154eb5jtt" path="res://untitled@4x (3).png" id="7_vivmo"]
+[ext_resource type="Texture2D" uid="uid://b0crrdlnnkr0c" path="res://untitled@4x (4).png" id="8_2cqfq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bx43i"]
+radius = 38.0
+height = 92.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gkdic"]
+animations = [{
+"frames": [{
+"duration": 0.6,
+"texture": ExtResource("4_dg77c")
+}, {
+"duration": 0.6,
+"texture": ExtResource("5_ycdy4")
+}, {
+"duration": 0.6,
+"texture": ExtResource("6_w48qg")
+}, {
+"duration": 0.6,
+"texture": ExtResource("7_vivmo")
+}, {
+"duration": 0.6,
+"texture": ExtResource("8_2cqfq")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yy6uq"]
+radius = 9.0
+height = 26.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3phul"]
+radius = 9.0
+height = 26.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gkdic"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gkdic"]
+size = Vector2(80, 706)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3phul"]
+size = Vector2(1324, 101.5)
+
+[node name="Node2D" type="Node2D" unique_id=610286120]
+position = Vector2(584, 345)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=643103832]
+position = Vector2(21.901123, -427.64807)
+scale = Vector2(0.4507265, 0.4507265)
+texture = ExtResource("1_7mycd")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1725078942]
+position = Vector2(568.9011, -431.64807)
+scale = Vector2(0.4507265, 0.4507265)
+texture = ExtResource("1_7mycd")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1215103970]
+position = Vector2(199.90112, 94.35193)
+scale = Vector2(0.4507265, 0.4507265)
+texture = ExtResource("1_7mycd")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=685406766]
+position = Vector2(-347.09888, 65.35193)
+scale = Vector2(0.4507265, 0.4507265)
+texture = ExtResource("1_7mycd")
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=29871458]
+position = Vector2(-522.0989, -464.64807)
+scale = Vector2(0.4507265, 0.4507265)
+texture = ExtResource("1_7mycd")
+
+[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=892688922]
+position = Vector2(748.9011, 123.35193)
+scale = Vector2(0.4507265, 0.4507265)
+texture = ExtResource("1_7mycd")
+
+[node name="Basket" type="Area2D" parent="." unique_id=853853115 groups=["basket"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="Basket" unique_id=962667459]
+position = Vector2(-305.99997, 162)
+scale = Vector2(0.4825, 0.4825)
+texture = ExtResource("3_7mycd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Basket" unique_id=644433624]
+position = Vector2(-331, 75)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_bx43i")
+debug_color = Color(0, 0.6, 0.7019608, 0.41960785)
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=494585171 groups=["Player", "poster"]]
+position = Vector2(139, -1)
+script = ExtResource("1_0xm2m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1411680856]
+position = Vector2(0, -4)
+scale = Vector2(0.6888282, 0.6888282)
+sprite_frames = SubResource("SpriteFrames_gkdic")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1635101026 groups=["poster"]]
+visible = false
+scale = Vector2(0.19390583, 0.19390583)
+texture = ExtResource("5_7mycd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player" unique_id=1229269829 groups=["poster"]]
+position = Vector2(0, 15)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_yy6uq")
+
+[node name="PickupArea" type="Area2D" parent="Player" unique_id=854119913 groups=["Poster"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/PickupArea" unique_id=1086720250 groups=["poster"]]
+position = Vector2(0, 15)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_3phul")
+
+[node name="HeldPoster" type="Sprite2D" parent="Player" unique_id=2092233646]
+visible = false
+position = Vector2(2.000015, 19.000006)
+rotation = 0.05235988
+scale = Vector2(0.069959044, 0.069959044)
+texture = ExtResource("5_272bh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=846688581]
+
+[node name="CountDisplay" type="Label" parent="Player/CanvasLayer" unique_id=936411967]
+offset_left = 1000.0
+offset_top = 21.0
+offset_right = 1127.0
+offset_bottom = 64.0
+text = "Fish Caught: 0"
+
+[node name="fih" parent="." unique_id=554198685 instance=ExtResource("4_1bvp3")]
+position = Vector2(125, 264)
+
+[node name="fih2" parent="." unique_id=573284500 instance=ExtResource("4_1bvp3")]
+position = Vector2(-31, 158)
+
+[node name="fih3" parent="." unique_id=1854549579 instance=ExtResource("4_1bvp3")]
+position = Vector2(311, 228)
+
+[node name="fih4" parent="." unique_id=1695098379 instance=ExtResource("4_1bvp3")]
+position = Vector2(456, 0)
+
+[node name="fih5" parent="." unique_id=1951839174 instance=ExtResource("4_1bvp3")]
+position = Vector2(545, 258)
+
+[node name="fih6" parent="." unique_id=1157996897 instance=ExtResource("4_1bvp3")]
+position = Vector2(-336, -88)
+
+[node name="fih7" parent="." unique_id=1237846158 instance=ExtResource("4_1bvp3")]
+position = Vector2(-212, -165)
+
+[node name="fih8" parent="." unique_id=1195415636 instance=ExtResource("4_1bvp3")]
+position = Vector2(30, -83)
+
+[node name="fih9" parent="." unique_id=224736511 instance=ExtResource("4_1bvp3")]
+position = Vector2(-108, 7)
+
+[node name="fih10" parent="." unique_id=556310445 instance=ExtResource("4_1bvp3")]
+position = Vector2(190, -187)
+
+[node name="fih11" parent="." unique_id=1611595401 instance=ExtResource("4_1bvp3")]
+position = Vector2(486, -168)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=766782364]
+position = Vector2(-654, 292)
+physics_material_override = SubResource("PhysicsMaterial_gkdic")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=639638457]
+position = Vector2(30, -291)
+shape = SubResource("RectangleShape2D_gkdic")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=167263131]
+position = Vector2(1262, -329)
+shape = SubResource("RectangleShape2D_gkdic")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=821259237]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=64276830]
+position = Vector2(45, 353.25)
+shape = SubResource("RectangleShape2D_3phul")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2" unique_id=93571986]
+position = Vector2(-1, -394)
+shape = SubResource("RectangleShape2D_3phul")
+
+[connection signal="area_entered" from="Player/PickupArea" to="Player" method="_on_pickup_area_area_entered"]
